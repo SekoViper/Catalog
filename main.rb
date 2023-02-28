@@ -12,7 +12,7 @@ def main
           '9. Add a Game', '10. Exit']
 
     num = gets.chomp
-    if num == '10'
+    if num == '0'
       puts 'Thank you for using out app'
       break
     elsif (1...10).include?(num.to_i)
