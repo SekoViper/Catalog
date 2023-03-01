@@ -24,40 +24,4 @@ class App
     print question
     gets.chomp
   end
-
-  # def list_all_books
-  #   puts 'list_all_books'
-  # end
-
-  # def list_all_music_albums
-  #   puts 'list_all_music_albums'
-  # end
-
-  # def list_all_games
-  #   puts 'list_all_games'
-  # end
-
-  # def list_all_genres
-  #   puts 'list_all_genres'
-  # end
-
-  # def list_all_labels
-  #   puts 'list_all_labels'
-  # end
-
-  # def list_all_authors
-  #   puts 'list_all_authors'
-  # end
-
-  # def add_book
-  #   puts 'add_book'
-  # end
-
-  # def add_music_album
-  #   puts 'add_music_album'
-  # end
-
-  # def add_music_game
-  #   puts 'add_music_game'
-  # end
 end
