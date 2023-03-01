@@ -14,7 +14,11 @@ class App
       # '4': method(:list_all_genres),
       '5': method(:list_all_labels),
       # '6': method(:list_all_authors),
+<<<<<<< HEAD
       '7': method(:add_book)
+=======
+      '7': method(:add_book),
+>>>>>>> 5d3d71db752a375159c0fb7f30f3e5e34a8ff136
       # '8': method(:add_music_album),
       # '9': method(:add_music_game)
     }
@@ -24,4 +28,5 @@ class App
     print question
     gets.chomp
   end
+
 end
