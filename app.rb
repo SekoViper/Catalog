@@ -14,7 +14,7 @@ class App
       # '4': method(:list_all_genres),
       '5': method(:list_all_labels),
       # '6': method(:list_all_authors),
-      '7': method(:add_book),
+      '7': method(:add_book)
       # '8': method(:add_music_album),
       # '9': method(:add_music_game)
     }
