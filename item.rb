@@ -1,6 +1,6 @@
 require 'date'
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date, :archived
+  attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
   def initialize(publish_date, archived: false)
     @id = Random.rand(1..1000)
@@ -16,5 +16,10 @@ class Item
 
   def move_to_archive?
     @archived = true if can_be_archived?
+  end
+
+  def add_label(label)
+    @label = label.title
+    label.items << to_json unless label.items.include?(to_json)
   end
 end
