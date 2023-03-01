@@ -13,4 +13,10 @@ class Genre < Item
         @items << item
         item.genre = self
     end
+
+    def list_all_genres
+        puts 'No Genres added!' if @items.empty?
+        @items.each { |item| puts "#{item['genre']}" }
+        puts ''
+    end
 end
