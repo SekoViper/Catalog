@@ -12,6 +12,4 @@ class MusicAlbum < Item
     parent_result = super
     parent_result && on_spotify
   end
-
-  def add_music_album; end
 end
