@@ -22,10 +22,10 @@ module MusicAlbumModule
 
   def store_music_album(album)
     albums = fetch_music_albums
-    unless albums.find { |obj| obj.title == album.title }
+    unless albums.find { |obj| obj['title'] == album['title'] }
       albums << album
       File.write('./saved/music_albums.json', JSON.generate(albums), mode: 'w')
-      puts 'Music Album saved successfuly'
+      puts 'Music Album saved successfully'
       return
     end
     puts 'Music Album already exists'
