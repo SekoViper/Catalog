@@ -16,3 +16,20 @@ CREATE TABLE Label(
   color VARCHAR(255)
 )
 
+
+CREATE TABLE Genre(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY,
+  genre_name VARCHAR(255),
+  genre_items JSON
+);
+
+CREATE TABLE Music_album(
+   id INT GENERATED ALWAYS AS IDENTITY PRIMARY,
+   label_id INT,
+   title VARCHAR(255),
+   artist VARCHAR(255),
+   year DATE,
+   genre VARCHAR(255)
+   FOREIGN KEY(label_id) REFERENCES Label(id),
+   FOREIGN KEY(genre) REFERENCES Genre(name)
+)
