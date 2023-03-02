@@ -9,12 +9,12 @@ module AuthorModule
   end
 
   def add_author(author)
-    add_label(Author.new(author['first_name'], author['last_name']))
     store_author(author)
   end
 
   def store_author(author)
     authors = fetch_authors
+    puts 'authors' if authors.empty?
     unless authors.find { |obj| obj.first_name == author.first_name && obj.last_name == author.last_name }
       authors << author
       File.write('./saved/authors.json', JSON.generate(authors), mode: 'w')
@@ -29,7 +29,7 @@ module AuthorModule
     return puts 'There are no Authors saved' if authors.empty?
 
     authors.each do |author|
-      puts "ID: #{author[' id']}, First Name: #{author['first_name']}, Last Name: #{author['last_name']}"
+      puts "First Name: #{author['first_name']}, Last Name: #{author['last_name']}"
     end
   end
 end

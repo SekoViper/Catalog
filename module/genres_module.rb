@@ -4,8 +4,8 @@ require 'json'
 
 module GenresModule
   def fetch_genres
-    books_json = File.read('./saved/genres.json')
-    JSON.parse(books_json)
+    genres_json = File.read('./saved/genres.json')
+    JSON.parse(genres_json)
   end
 
   def add_genre(name)
@@ -16,9 +16,14 @@ module GenresModule
 
   def store_genre(genre)
     genres = fetch_genres
-    return if genres.find { |genre| genre.name == genre }
+    new_genre = { 'id' => 1, 'name' => genre['name'] }
 
-    genres << genre
+    unless genres.empty?
+      last_genre = genres.last
+      new_genre['id'] = last_genre['id'] + 1 if last_genre['id']
+    end
+
+    genres << new_genre
     File.write('./saved/genres.json', JSON.generate(genres), mode: 'w')
     nil
   end
