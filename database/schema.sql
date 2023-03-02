@@ -33,3 +33,33 @@ CREATE TABLE Music_album(
    FOREIGN KEY(label_id) REFERENCES Label(id),
    FOREIGN KEY(genre) REFERENCES Genre(name)
 )
+
+CREATE TABLE Author(
+  id SERIAL PRIMARY KEY,
+  game_id INTEGER NOT NULL,
+  label_id INTEGER NOT NULL,
+  genre_id INTEGER NOT NULL,
+  first_name VARCHAR NOT NULL,
+  last_name VARCHAR NOT NULL,
+)
+
+CREATE TABLE Game (
+	id SERIAL PRIMARY KEY,
+	multiplayer VARCHAR NOT NULL,
+	last_played_at DATE NOT NULL,
+	publish_date DATE NOT NULL,
+	first_name VARCHAR NOT NULL,
+	last_name VARCHAR NOT NULL,
+)
+
+BEGIN;
+
+ALTER TABLE Author
+ADD (game_id) INT REFERENCES Game(id);
+ADD (label_id) INT REFERENCES Label(id);
+ADD (genre_id) INT REFERENCES Genre(id);
+SELECT * FROM Item
+ORDER BY id;
+
+
+COMMIT;
