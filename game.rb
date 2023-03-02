@@ -1,3 +1,4 @@
+require 'date'
 class Game
   attr_accessor :multiplayer, :last_played_at
 
@@ -7,8 +8,9 @@ class Game
   end
 
   def can_be_archived?
+    parent_result = super
     date_now = Date.today
-    pub_date = Date.parse(@publish_date)
-    ((date_now - pub_date) / 365).floor > 10
+    last_played_at = Date.parse(@last_played_at)
+    parent_result && ((date_now - last_played_at) / 365).floor > 2
   end
 end
