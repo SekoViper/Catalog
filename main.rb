@@ -9,7 +9,7 @@ def main
           '1. List all Books', '2. List all Music Albums',
           '3. List all Games', '4. List all Genres', '5. List all labels',
           '6. List all Authors', '7. Add a Book', '8. Add a Music Album',
-          '9. Add a Game', '10. Exit']
+          '9. Add a Game', '0. Exit']
 
     num = gets.chomp
     if num == '0'
