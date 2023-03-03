@@ -13,7 +13,7 @@ def main
 
     num = gets.chomp
     if num == '0'
-      puts 'Thank you for using out app'
+      puts 'Thank you for using our app'
       break
     elsif (1...10).include?(num.to_i)
       app.options[:"#{num}"].call
